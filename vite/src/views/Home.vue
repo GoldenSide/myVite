@@ -15,7 +15,7 @@
   </div>
 </template>
 
-<script>
+<script  lang="ts">
 import vheader from "../components/layout/header.vue";
 import vsidebar from "../components/layout/sideBar.vue";
 import vtags from "../components/layout/tags.vue";

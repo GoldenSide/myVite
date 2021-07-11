@@ -15,8 +15,8 @@
 </template>
 
 <script setup lang="ts">
-  import { defineProps} from "vue";
-  ref:collapse=false;
+  import { defineProps, ref} from "vue";
+  const collapse=ref(false);
   function collapseChange(){
   }
 </script>
