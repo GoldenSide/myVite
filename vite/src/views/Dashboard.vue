@@ -5,24 +5,11 @@
 * @date 2021/07/06 16:05:40
 *--->
 <template>
-  <div></div>
+  <div>
+    我是主页面
+  </div>
 </template>
 
-<script>
-export default {
-  name: "dashboard",
-  components: {},
-  data() {
-    return {};
-  },
-  props: {},
-  watch: {
-    xxx: {},
-  },
-  created() {},
-  methods: {},
-};
-</script>
+<script></script>
 
-<style scoped >
-</style>
+<style scoped></style>

@@ -1,14 +1,20 @@
 import { createRouter, createWebHistory } from "vue-router";
+// import  content from
+import layout from "@/components/layout/index.vue";
+// import content from "@/component/layout/layout";
 
 const routes = [
   {
     path: "/",
     redirect: "/dashboard",
+    meta: {
+      hidden: true,
+    },
   },
   {
     path: "/",
     name: "home",
-    component: () => import("../views/Home.vue"),
+    component: layout,
     children: [
       {
         path: "dashboard",

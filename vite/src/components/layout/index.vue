@@ -5,24 +5,22 @@
 * @date 2021/07/06 15:04:52
 *--->
 <template>
-  <div class="main">
-    <div class="leftSide">
+  <el-row>
+    <el-col :xs="16" :sm="12" :md="8" :lg="6" :xl="2">
       <vsidebar />
-    </div>
-    <div class="rightSide">
+    </el-col>
+    <el-col :xs="8" :sm="12" :md="16" :lg="18" :xl="22">
       <Gheader />
       <vtags />
-      <div class="content">
-        <router-view></router-view>
-      </div>
-    </div>
-  </div>
+      <router-view></router-view
+    ></el-col>
+  </el-row>
 </template>
 
 <script lang="ts">
-import Gheader from "../components/layout/header.vue";
-import vsidebar from "../components/layout/sideBar.vue";
-import vtags from "../components/layout/tags.vue";
+import Gheader from "./header.vue";
+import vsidebar from "./sideBar.vue";
+import vtags from "./tags.vue";
 import { ref, defineComponent } from "vue";
 export default defineComponent({
   name: "home",

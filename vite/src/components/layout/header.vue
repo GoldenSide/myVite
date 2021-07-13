@@ -10,15 +10,23 @@
     <div class="collapse-btn" @click="collapseChange">
       <i :class="[collapse ? 'el-icon-s-unfold' : 'el-icon-s-fold']"></i>
     </div>
-    <div class="logo">后台管理系统</div>
+    <img src="/logo/logo.jpg" alt="" />
+    <div class="logo">GoldenSide`s system</div>
   </div>
 </template>
 
-<script setup lang="ts">
-  import { defineProps, ref} from "vue";
-  const collapse=ref(false);
-  function collapseChange(){
-  }
+<script lang="ts">
+import { ref, defineComponent } from "vue";
+export default defineComponent({
+  name: "Header",
+  setup: () => {
+    const collapse = ref(false);
+    function collapseChange() {
+      collapse.value = !collapse.value;
+    }
+    return { collapse, collapseChange };
+  },
+});
 </script>
 <style scoped lang="scss">
 .header {
@@ -29,5 +37,11 @@
   font-size: 22px;
   color: #fff;
   background-color: #242f42;
+  img {
+    display: block;
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+  }
 }
 </style>

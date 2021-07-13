@@ -8,20 +8,8 @@
   <div></div>
 </template>
 
-<script>
-export default {
-  name: "sidebar",
-  components: {},
-  data() {
-    return {};
-  },
-  props: {},
-  watch: {
-    xxx: {},
-  },
-  created() {},
-  methods: {},
-};
+<script lang="ts">
+
 </script>
 
 <style scoped lang='scss'>
