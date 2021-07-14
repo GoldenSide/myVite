@@ -4,6 +4,9 @@ const path = require("path");
  * @type {import('vite').UserConfig}
  */
 function resolve(dir) {
+  let pa = path.join(__dirname, "./", dir);
+  console.log(pa);
+  console.log(dir);
   return path.join(__dirname, "./", dir);
 }
 export default {

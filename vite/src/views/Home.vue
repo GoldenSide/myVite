@@ -20,9 +20,9 @@
 </template>
 
 <script lang="ts">
-import Gheader from "../components/layout/header.vue";
-import vsidebar from "../components/layout/sideBar.vue";
-import vtags from "../components/layout/tags.vue";
+import Gheader from "../components/layout/header/header.vue";
+import vsidebar from "../components/layout/sideBar/sideBar.vue";
+import vtags from "../components/layout/tags/tags.vue";
 import { ref, defineComponent } from "vue";
 export default defineComponent({
   name: "home",

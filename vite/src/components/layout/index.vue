@@ -18,9 +18,9 @@
 </template>
 
 <script lang="ts">
-import Gheader from "./header.vue";
-import vsidebar from "./sideBar.vue";
-import vtags from "./tags.vue";
+import Gheader from "./header/header.vue";
+import vsidebar from "./sideBar/sideBar.vue";
+import vtags from "./tags/tags.vue";
 import { ref, defineComponent } from "vue";
 export default defineComponent({
   name: "home",
