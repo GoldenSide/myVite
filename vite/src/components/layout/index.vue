@@ -7,7 +7,11 @@
 <template>
   <el-row>
     <el-col :xs="16" :sm="12" :md="8" :lg="6" :xl="2">
-      <vsidebar />
+      <div class="section-container">
+        <div class="sidebar-container">
+          <vsidebar />
+        </div>
+      </div>
     </el-col>
     <el-col :xs="8" :sm="12" :md="16" :lg="18" :xl="22">
       <Gheader />
@@ -19,7 +23,7 @@
 
 <script lang="ts">
 import Gheader from "./header/header.vue";
-import vsidebar from "./sideBar/sideBar.vue";
+import vsidebar from "./sideBar/index.vue";
 import vtags from "./tags/tags.vue";
 import { ref, defineComponent } from "vue";
 export default defineComponent({

@@ -21,7 +21,7 @@
 
 <script lang="ts">
 import Gheader from "../components/layout/header/header.vue";
-import vsidebar from "../components/layout/sideBar/sideBar.vue";
+import vsidebar from "../components/layout/sideBar/index.vue";
 import vtags from "../components/layout/tags/tags.vue";
 import { ref, defineComponent } from "vue";
 export default defineComponent({
