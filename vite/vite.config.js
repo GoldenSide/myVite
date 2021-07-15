@@ -1,9 +1,8 @@
 import vue from "@vitejs/plugin-vue";
-const path = require("path");
+import path from "path";
 /**
  * @type {import('vite').UserConfig}
  */
-
 export default {
   plugins: [vue()],
   resolve: {

@@ -9,7 +9,7 @@
     </template>
   </div>
 
-  <el-submenu v-else index="a">
+  <el-submenu v-else :index="'a'">
     <template #title>
       <item :meta="item.meta" />
     </template>
@@ -23,7 +23,7 @@
   </el-submenu>
 </template>
 <script lang="ts">
-import { ref, defineComponent, watch, reactive } from "vue";
+import { ref, defineComponent, reactive } from "vue";
 import item from "./item.vue";
 import appLink from "./link.vue";
 export default defineComponent({
@@ -32,14 +32,14 @@ export default defineComponent({
   components: { item, appLink },
   setup(props, ctx) {
     console.log(props.item);
-    console.log(ctx);
+    // console.log(ctx);
     let currentItem: Record<string, any> = reactive({});
-    currentItem = props.item;
+    // currentItem = props.item;
     const nohidden = () => {
       if (currentItem.hasOwnProperty("meta")) {
         return !currentItem.meta.hidden;
       } else {
-        return true;
+        return false;
       }
     };
     const noChild = () => {
@@ -48,12 +48,15 @@ export default defineComponent({
         currentItem.children.length == 0
       );
     };
+
     console.log(nohidden());
     console.log(noChild());
+
     return {
       currentItem,
       nohidden,
       noChild,
+      // pathIndex,
     };
   },
 });

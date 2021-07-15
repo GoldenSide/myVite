@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory,RouteRecordRaw } from "vue-router";
-import layout from "../components/layout/index.vue";
+import layout from "@/components/layout/index.vue";
+import content from "@/components/layout/content/index.vue";
 const routes:RouteRecordRaw[]= [
   // {
   //   path: "/",
@@ -19,7 +20,7 @@ const routes:RouteRecordRaw[]= [
         meta: {
           title: "系统首页",
         },
-        component: () => import("../views/Dashboard.vue"),
+        component: () => import("@/views/Dashboard.vue"),
       },
     ],
   },
@@ -34,7 +35,7 @@ const routes:RouteRecordRaw[]= [
         meta: {
           title: "基础表格",
         },
-        component: () => import("../views/table/list.vue"),
+        component: () => import("@/views/table/list.vue"),
       },
     ]
   }

@@ -9,38 +9,45 @@
     <el-col :xs="16" :sm="12" :md="8" :lg="6" :xl="2">
       <div class="section-container">
         <div class="sidebar-container">
-          <vsidebar />
+          <Gsidebar />
         </div>
       </div>
     </el-col>
     <el-col :xs="8" :sm="12" :md="16" :lg="18" :xl="22">
-      <Gheader />
-      <vtags />
-      <router-view></router-view
-    ></el-col>
+      <div class="section-container">
+        <div class="section-top">
+          <Gheader />
+          <Gtags />
+        </div>
+        <div class="section-content">
+          <Gcontent />
+        </div>
+      </div>
+    </el-col>
   </el-row>
 </template>
 
 <script lang="ts">
 import Gheader from "./header/header.vue";
-import vsidebar from "./sideBar/index.vue";
-import vtags from "./tags/tags.vue";
+import Gsidebar from "./sideBar/index.vue";
+import Gtags from "./tags/tags.vue";
+import Gcontent from "./content/index.vue";
 import { ref, defineComponent } from "vue";
 export default defineComponent({
   name: "home",
-  components: { Gheader, vsidebar, vtags },
+  components: { Gheader, Gsidebar, Gtags, Gcontent },
 });
 </script>
 
 <style scoped lang="scss">
-.main {
-  display: flex;
-  .leftSide {
-    flex-basis: 260px;
-    flex-shrink: 0;
-  }
-  .rightSide {
-    flex: 1;
-  }
-}
+// .main {
+//   display: flex;
+//   .leftSide {
+//     flex-basis: 260px;
+//     flex-shrink: 0;
+//   }
+//   .rightSide {
+//     flex: 1;
+//   }
+// }
 </style>

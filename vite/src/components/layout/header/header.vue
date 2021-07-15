@@ -10,8 +10,10 @@
     <div class="collapse-btn" @click="collapseChange">
       <i :class="[collapse ? 'el-icon-s-unfold' : 'el-icon-s-fold']"></i>
     </div>
-    <img src="/logo/logo.jpg" alt="" />
-    <div class="logo">GoldenSide`s system</div>
+    <div class="userOwn">
+      <div class="name">GoldenSide</div>
+      <img src="/logo/logo.jpg" alt="" />
+    </div>
   </div>
 </template>
 
@@ -34,14 +36,42 @@ export default defineComponent({
   box-sizing: border-box;
   width: 100%;
   height: 70px;
-  font-size: 22px;
-  color: #fff;
   background-color: #242f42;
-  img {
-    display: block;
-    width: 50px;
-    height: 50px;
-    border-radius: 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  .collapse-btn {
+    font-size: 22px;
+    color: #fff;
+  }
+  .name {
+    color: #fff;
+    margin-right: 20px;
+  }
+
+  @keyframes rotation {
+    from {
+      -webkit-transform: rotate(0deg);
+    }
+    to {
+      -webkit-transform: rotate(360deg);
+    }
+  }
+  .userOwn {
+    width: 300px;
+    padding-right: 20px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    img {
+      display: inline-block;
+      width: 50px;
+      height: 50px;
+      border-radius: 25px;
+      cursor: pointer;
+      transform: rotate(360deg);
+      animation: rotation 2s linear infinite;
+    }
   }
 }
 </style>
