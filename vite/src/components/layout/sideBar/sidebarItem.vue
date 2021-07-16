@@ -1,15 +1,12 @@
 <template>
   <div class="menu-wrapper" v-if="nohidden() && noChild()">
-    <template>
-      <app-link>
-        <el-menu-item>
-          <item />
-        </el-menu-item>
-      </app-link>
-    </template>
+    <app-link :to="item.path">
+      <el-menu-item>
+        <item :meta="item.meta" />
+      </el-menu-item>
+    </app-link>
   </div>
-
-  <el-submenu v-else :index="'a'">
+  <el-submenu v-else :index="'/dashd'">
     <template #title>
       <item :meta="item.meta" />
     </template>
@@ -34,12 +31,12 @@ export default defineComponent({
     console.log(props.item);
     // console.log(ctx);
     let currentItem: Record<string, any> = reactive({});
-    // currentItem = props.item;
+    currentItem = props.item;
     const nohidden = () => {
-      if (currentItem.hasOwnProperty("meta")) {
+      if (currentItem.meta.hasOwnProperty("hidden")) {
         return !currentItem.meta.hidden;
       } else {
-        return false;
+        return true;
       }
     };
     const noChild = () => {
@@ -51,7 +48,7 @@ export default defineComponent({
 
     console.log(nohidden());
     console.log(noChild());
-
+    console.log(props.item);
     return {
       currentItem,
       nohidden,

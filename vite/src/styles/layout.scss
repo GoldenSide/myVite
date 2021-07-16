@@ -1,6 +1,7 @@
 #app {
     .section-container {
       // 侧边栏 Sidebar container
+      height:100vh;
       .sidebar-container {
         transition: width 0.28s;
         // width: $sideBarWidth !important;
@@ -43,7 +44,7 @@
   
         .el-menu {
           // border: none;
-          height: 100%;
+          height: 56px;
           width: 100% !important;
         }
         .el-submenu__title {
@@ -67,17 +68,17 @@
           }
         }
   
-        & .nest-menu .el-submenu > .el-submenu__title,
-        & .el-submenu .el-menu-item {
-          min-width:100%  !important;
-          background-color: $subMenuBg !important;
-          color: #606366 !important;
-          padding:0 0 0 56px !important;
-          box-sizing: border-box;
-          &:hover {
-            background-color: $subMenuHover !important;
-          }
-        }
+        // & .nest-menu .el-submenu > .el-submenu__title,
+        // & .el-submenu .el-menu-item {
+        //   min-width:100%  !important;
+        //   background-color: $subMenuBg !important;
+        //   color: #606366 !important;
+        //   padding:0 0 0 56px !important;
+        //   box-sizing: border-box;
+        //   &:hover {
+        //     background-color: $subMenuHover !important;
+        //   }
+        // }
         // & .el-submenu .el-menu-item {
         //   &.is-active {
         //     position: relative;

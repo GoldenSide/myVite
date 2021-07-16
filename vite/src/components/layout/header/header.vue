@@ -36,7 +36,7 @@ export default defineComponent({
   box-sizing: border-box;
   width: 100%;
   height: 70px;
-  background-color: #242f42;
+  background-color: #2e37a4;
   display: flex;
   justify-content: space-between;
   align-items: center;

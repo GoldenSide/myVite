@@ -13,7 +13,7 @@
       :unique-opened="true"
       :background-color="'#f7f8fa'"
       :text-color="'#303133'"
-      :active-text-color="'#409eff'"
+      :active-text-color="'#2E37A4'"
       mode="vertical"
     >
       <sidebar-item
@@ -37,9 +37,9 @@ export default defineComponent({
   setup() {
     const currentroute = useRoute();
     const routes = useRouter().options.routes;
-    const routerPath = computed(() => {
-      return currentroute.path;
-    });
+    // console.log(currentroute.path);
+    // console.log(currentroute);
+    const routerPath = currentroute.path;
 
     const isCollapse = computed(() => {
       return false;
@@ -47,7 +47,7 @@ export default defineComponent({
     // const handleOpen = (key: string, keyPath: any) => {};
     // const handleClose = (key: string, keyPath: any) => {};
     // console.log(variables.value);
-    // console.log(variables);
+    console.log(routerPath);
     return {
       routes,
       routerPath,

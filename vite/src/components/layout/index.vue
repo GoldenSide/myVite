@@ -40,6 +40,7 @@ export default defineComponent({
 </script>
 
 <style scoped lang="scss">
+// .section-container{}
 // .main {
 //   display: flex;
 //   .leftSide {

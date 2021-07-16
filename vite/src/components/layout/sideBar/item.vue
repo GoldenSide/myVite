@@ -8,25 +8,18 @@ export default defineComponent({
       type: Object,
     },
   },
-  render() {
-    // const { icon, title } = context.props.meta;
-    // const vnodes = [];
-    // console.log(props);
-    // if (icon) {
-    //   vnodes.push(<svg-icon icon-class={icon} />);
-    // }
-
-    // if (title) {
-    //   vnodes.push(<span slot="title">{title}</span>);
-    // }
-    // let meta: String | any | undefined = this.$props.meta;
-    // console.log(meta);
+  render(props: any, ctx: any) {
+    let { icon, title } = props.meta;
     console.log(this.$props);
-    return h("div", {}, "我是菜单");
+    return h("div", {}, [
+      icon &&
+        h("svg-icon", {
+          props: {
+            iconClass: icon,
+          },
+        }),
+      title && h("span", { slot: "title" }, title),
+    ]);
   },
-  //   setup(props, ctx) {
-  //     console.log(ctx);
-  //     console.log(props);
-  //   },
 });
 </script>
