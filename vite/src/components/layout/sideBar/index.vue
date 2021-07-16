@@ -6,14 +6,14 @@
 *--->
 <template>
   <el-scrollbar wrap-class="scrollbar-wrapper">
+    <!-- :background-color="'#f7f8fa'" -->
     <el-menu
       :show-timeout="200"
       :default-active="routerPath"
       :collapse="isCollapse"
       :unique-opened="true"
-      :background-color="'#f7f8fa'"
-      :text-color="'#303133'"
-      :active-text-color="'#2E37A4'"
+      :text-color="'#bfcbd9'"
+      :active-text-color="'#1890ff'"
       mode="vertical"
     >
       <sidebar-item
@@ -37,17 +37,10 @@ export default defineComponent({
   setup() {
     const currentroute = useRoute();
     const routes = useRouter().options.routes;
-    // console.log(currentroute.path);
-    // console.log(currentroute);
     const routerPath = currentroute.path;
-
     const isCollapse = computed(() => {
       return false;
     });
-    // const handleOpen = (key: string, keyPath: any) => {};
-    // const handleClose = (key: string, keyPath: any) => {};
-    // console.log(variables.value);
-    console.log(routerPath);
     return {
       routes,
       routerPath,

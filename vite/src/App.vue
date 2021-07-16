@@ -4,17 +4,17 @@
   <router-view></router-view>
 </template>
 
-<script setup lang="ts">
-</script>
+<script setup lang="ts"></script>
 
 <style>
 @import "./assets/css/main.css";
-@import "./assets/css/color-dark.css";
+/* @import "./assets/css/color-dark.css"; */
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
+  font-size: 14px;
 }
 .element-plus-logo {
   width: 50%;

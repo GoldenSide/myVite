@@ -20,7 +20,7 @@ const routes:RouteRecordRaw[]= [
     },
     children: [
       {
-        path: "dashboard",
+        path: "/dashboard",
         name: "dashboard",
         meta: {
           title: "数据展示页",
@@ -29,25 +29,25 @@ const routes:RouteRecordRaw[]= [
       },
     ],
   },
-  // {
-  //   path:"/table",
-  //   name:'tableList',
-  //   component:layout,
-  //   meta:{
-  //     title:'表格',
-  //     icon:""
-  //   },
-  //   children:[
-  //     {
-  //       path: "tableBasic",
-  //       name: "tableBasic",
-  //       meta: {
-  //         title: "基础表格",
-  //       },
-  //       component: () => import("@/views/table/list.vue"),
-  //     },
-  //   ]
-  // }
+  {
+    path:"/table",
+    name:'tableList',
+    component:layout,
+    meta:{
+      title:'表格',
+      icon:""
+    },
+    children:[
+      {
+        path: "/tableBasic",
+        name: "tableBasic",
+        meta: {
+          title: "基础表格",
+        },
+        component: () => import("@/views/table/list.vue"),
+      },
+    ]
+  }
 ];
 
 const router = createRouter({

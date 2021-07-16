@@ -1,5 +1,5 @@
 <template>
-  <router-link :to="'/' + to">
+  <router-link :to="to">
     <slot />
   </router-link>
 </template>
@@ -13,8 +13,6 @@ export default defineComponent({
       required: true,
     },
   },
-  setup(props, ctx) {
-    console.log(props);
-  },
+  setup(props, ctx) {},
 });
 </script>

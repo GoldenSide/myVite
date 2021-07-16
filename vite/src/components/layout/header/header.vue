@@ -35,17 +35,18 @@ export default defineComponent({
   position: relative;
   box-sizing: border-box;
   width: 100%;
-  height: 70px;
-  background-color: #2e37a4;
+  height: 60px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  border-bottom: 1px solid #dfdfdf;
   .collapse-btn {
     font-size: 22px;
-    color: #fff;
+    color: #aeaeae;
+    cursor: pointer;
   }
   .name {
-    color: #fff;
+    color: #aeaeae;
     margin-right: 20px;
   }
 
@@ -65,8 +66,8 @@ export default defineComponent({
     align-items: center;
     img {
       display: inline-block;
-      width: 50px;
-      height: 50px;
+      width: 40px;
+      height: 40px;
       border-radius: 25px;
       cursor: pointer;
       transform: rotate(360deg);

@@ -6,7 +6,7 @@
       </el-menu-item>
     </app-link>
   </div>
-  <el-submenu v-else :index="'/dashd'">
+  <el-submenu v-else :index="combinePath(item.path)">
     <template #title>
       <item :meta="item.meta" />
     </template>
@@ -16,6 +16,7 @@
       :item="child"
       :key="child.path"
       class="nest-menu"
+      :base-path="child.path"
     />
   </el-submenu>
 </template>
@@ -23,13 +24,13 @@
 import { ref, defineComponent, reactive } from "vue";
 import item from "./item.vue";
 import appLink from "./link.vue";
+// import path from "path";
+const path = require("path");
 export default defineComponent({
   name: "sidebarItem",
-  props: ["item", "basePath"],
+  props: ["item", "basePath", "basePath"],
   components: { item, appLink },
   setup(props, ctx) {
-    console.log(props.item);
-    // console.log(ctx);
     let currentItem: Record<string, any> = reactive({});
     currentItem = props.item;
     const nohidden = () => {
@@ -45,14 +46,22 @@ export default defineComponent({
         currentItem.children.length == 0
       );
     };
-
-    console.log(nohidden());
-    console.log(noChild());
-    console.log(props.item);
+    // console.log(currentItem.path);
+    const combinePath = (pa: string) => {
+      path.resolve(pa);
+      let str: string = "";
+      str = props.basePath + pa;
+      console.log(str);
+      return str;
+    };
+    let curPa = props.basePath;
+    console.log(curPa);
     return {
-      currentItem,
+      // currentItem,
       nohidden,
       noChild,
+      combinePath,
+      curPa,
       // pathIndex,
     };
   },

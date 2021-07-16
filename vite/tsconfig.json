@@ -45,7 +45,7 @@
     "resolveJsonModule": true,
     "esModuleInterop": true,
     "lib": ["esnext", "dom"],
-    "types": ["node"],
+    "types": [ "vite/client","node"],
     "typeRoots": ["./node_modules/@types/", "./types"],
   },
   "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"]
