@@ -2,13 +2,7 @@ import { createRouter, createWebHistory,RouteRecordRaw } from "vue-router";
 import layout from "@/components/layout/index.vue";
 import content from "@/components/layout/content/index.vue";
 const routes:RouteRecordRaw[]= [
-  // {
-  //   path: "/",
-  //   redirect: "/dashboard",
-  //   meta: {
-  //     hidden: true,
-  //   },
-  // },
+
   {
     path: "/",
     name: "home",
@@ -20,12 +14,22 @@ const routes:RouteRecordRaw[]= [
     },
     children: [
       {
-        path: "/dashboard",
+        path: "dashboard",
         name: "dashboard",
         meta: {
           title: "数据展示页",
+          fullPath:'/dashboard'
         },
         component: () => import("@/views/Dashboard.vue"),
+        // children:[{
+        //   path:"chart",
+        //   name:"chart",
+        //   component: () => import("@/views/Dashboard.vue"),
+        //   meta:{
+        //     title:'图表展示',
+        //     fullPath:'/dashboard/chart'
+        //   }
+        // }]
       },
     ],
   },
@@ -39,10 +43,11 @@ const routes:RouteRecordRaw[]= [
     },
     children:[
       {
-        path: "/tableBasic",
+        path: "tableBasic",
         name: "tableBasic",
         meta: {
           title: "基础表格",
+          fullPath:'/table/tableBasic'
         },
         component: () => import("@/views/table/list.vue"),
       },

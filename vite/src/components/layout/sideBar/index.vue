@@ -13,14 +13,16 @@
       :collapse="isCollapse"
       :unique-opened="true"
       :text-color="'#bfcbd9'"
+      @open="handleOpen"
+      @close="handleClose"
       :active-text-color="'#1890ff'"
       mode="vertical"
     >
       <sidebar-item
-        v-for="route in routes"
+        v-for="(route, index) in routes"
         :key="route.path"
         :item="route"
-        :base-path="route.path"
+        :base-index="index"
       />
     </el-menu>
   </el-scrollbar>
@@ -38,23 +40,24 @@ export default defineComponent({
     const currentroute = useRoute();
     const routes = useRouter().options.routes;
     const routerPath = currentroute.path;
+    console.log(routerPath);
     const isCollapse = computed(() => {
       return false;
     });
+    const handleOpen = (key: string, keyPath: string) => {
+      console.log("open", key, keyPath);
+    };
+    const handleClose = (key: string, keyPath: string) => {
+      console.log("close", key, keyPath);
+    };
     return {
       routes,
       routerPath,
-      // variables,
       isCollapse,
-      // handleOpen,
-      // handleClose,
+      handleOpen,
+      handleClose,
     };
   },
 });
 </script>
-<style lang="scss">
-.color {
-  background-color: $menuText;
-  height: 10px;
-}
-</style>
+<style lang="scss"></style>

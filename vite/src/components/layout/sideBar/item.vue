@@ -10,7 +10,7 @@ export default defineComponent({
   },
   render(props: any, ctx: any) {
     let { icon, title } = props.meta;
-    return h("div", {}, [
+    return h("div", { class: ["submenu_title"] }, [
       icon &&
         h("svg-icon", {
           props: {
